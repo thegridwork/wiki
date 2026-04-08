@@ -10,7 +10,10 @@ import { join, basename, dirname } from "path";
 import { fileURLToPath } from "url";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const wikiDir = join(__dirname, "..", "..", "wiki", "pages");
+// Look for pages in the repo root first, then fall back to ../wiki/pages
+const localDir = join(__dirname, "..", "pages");
+const parentDir = join(__dirname, "..", "..", "wiki", "pages");
+const wikiDir = existsSync(localDir) ? localDir : parentDir;
 const outFile = join(__dirname, "..", "src", "wiki-data.ts");
 
 if (!existsSync(wikiDir)) {
