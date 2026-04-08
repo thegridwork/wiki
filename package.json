@@ -1,0 +1,48 @@
+{
+  "name": "gridwork-wiki",
+  "version": "1.0.0",
+  "mcpName": "io.github.thegridwork/wiki",
+  "description": "Compliance knowledge base MCP server — query GDPR, EU AI Act, CCPA, software licensing, and web accessibility regulations. 33 compiled articles covering 5 compliance domains.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/thegridwork/wiki.git"
+  },
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "gridwork-wiki": "dist/index.js"
+  },
+  "scripts": {
+    "build": "node scripts/bundle-wiki.js && tsc",
+    "build:wiki": "node scripts/bundle-wiki.js",
+    "start": "node dist/index.js",
+    "dev": "tsx src/index.ts"
+  },
+  "keywords": [
+    "mcp",
+    "mcp-server",
+    "compliance",
+    "gdpr",
+    "ai-act",
+    "ccpa",
+    "wcag",
+    "license",
+    "regulation",
+    "knowledge-base",
+    "wiki"
+  ],
+  "author": "Gridwork <thegridwork@proton.me>",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.29.0",
+    "zod": "^3.23.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.7.0"
+  }
+}
